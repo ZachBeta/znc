@@ -19,6 +19,8 @@ if [ "$PORT" = "" ] || [ "$PASS" = "" ] || [ "$NICK" = "" ]; then
   exit 1
 fi
 
+echo "Using Port: $PORT"
+
 sed -i s/\$PORT/${PORT}/ .znc/configs/znc.conf
 sed -i s/\$NICK/${NICK}/ .znc/configs/znc.conf
 sed -i s^\$PASS^${PASS}^ .znc/configs/znc.conf
